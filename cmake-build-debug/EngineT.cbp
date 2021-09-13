@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="EngineT"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/tomaszslazak/dev/EngineT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/tomaszslazak/dev/EngineT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/tomaszslazak/dev/EngineT/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EngineT">
+				<Option output="/Users/tomaszslazak/dev/EngineT/cmake-build-debug/EngineT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tomaszslazak/dev/EngineT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers"/>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers/core"/>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers/components"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 EngineT"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EngineT/fast">
+				<Option output="/Users/tomaszslazak/dev/EngineT/cmake-build-debug/EngineT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/tomaszslazak/dev/EngineT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers"/>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers/core"/>
+					<Add directory="/Library/Frameworks/SDL2.framework/Headers/components"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 EngineT/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/tomaszslazak/dev/EngineT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AIComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AIComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AnimationComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AnimationComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AttackComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/AttackComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/CameraController.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/CameraController.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/CollisionComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/CollisionComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Component.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Components.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Entity.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Entity.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/EntityManager.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/EntityManager.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/ForceComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/ForceComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/GameController.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/GameController.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/HealthComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/HealthComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Map.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/PlayerComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/PlayerComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/PrefabManager.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/PrefabManager.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/ResourceManager.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/ResourceManager.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/SpriteComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/SpriteComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/TextureManager.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/TextureManager.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/TransformComponent.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/TransformComponent.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Vector2D.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/Vector2D.h">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/main.cpp">
+			<Option target="EngineT"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/tomaszslazak/dev/EngineT/cmake/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
