@@ -28,6 +28,7 @@ std::size_t getComponentTypeID() noexcept
 /// class representing game object
 class Entity
 {
+    int i;
 	/// manager possesing this instance of entity
 	EntityManager& manager;
 	/// vector of smart pointers to components possessed by this instance of entity
@@ -38,7 +39,7 @@ class Entity
 	std::bitset<16> componentBitset;
 
 public:
-	explicit Entity(EntityManager& manager);
+	explicit Entity(EntityManager& manager, int i);
 	/// calls update() of each component possessed by entity
 	void update();
 	/// calls render() of each component possessed by entity
@@ -75,5 +76,9 @@ public:
 	{
 		auto ptr(componentArray[getComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
+	}
+
+	int getIndex() const {
+	    return i;
 	}
 };

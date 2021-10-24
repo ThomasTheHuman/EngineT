@@ -9,3 +9,7 @@
 #include "AIComponent.h"
 #include "HealthComponent.h"
 #include "AttackComponent.h"
+
+enum Components {
+
+};

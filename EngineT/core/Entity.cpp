@@ -1,6 +1,6 @@
 #include "EntityManager.h"
 
-Entity::Entity(EntityManager& manager): manager(manager)
+Entity::Entity(EntityManager& manager, int i): manager(manager), i(i)
 {
 }
 

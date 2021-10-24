@@ -3,7 +3,13 @@
 extern "C" {
 #endif
 
-extern void start();
+    extern void init();
+    extern void configure();
+
+    extern int createEntity();
+    extern void addEntityToGroup(int entityId, int groupId);
+
+    extern void run();
 
 #ifdef __cplusplus
 }

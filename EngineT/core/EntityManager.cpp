@@ -25,8 +25,12 @@ std::vector<Entity*>& EntityManager::getGroup(std::size_t group)
 
 Entity& EntityManager::addEntity()
 {
-	auto* entity = new Entity(*this);
+	auto* entity = new Entity(*this, entities.size());
 	std::unique_ptr<Entity> uPtr{entity};
 	entities.emplace_back(std::move(uPtr));
 	return *entity;
+}
+
+Entity& EntityManager::getEntity(int i) {
+    return *entities[i].get();
 }

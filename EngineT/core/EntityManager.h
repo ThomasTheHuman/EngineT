@@ -24,4 +24,5 @@ public:
 	/// creates new entity possessed by this instance of EntityManager
 	/// @return new entity
 	Entity& addEntity();
+	Entity& getEntity(int i);
 };
