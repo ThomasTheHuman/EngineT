@@ -63,8 +63,9 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       sudo apt-get install libsdl2-dev
-       sudo apt-get install python3-dev
+       sudo apt-get update
+       sudo apt-get -y install libsdl2-dev
+       sudo apt-get -y install python3-dev
        python3 -m pip install .
        python3 setup.py install
 
