@@ -63,6 +63,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
+       python3 -m pip install .
        python3 setup.py install
 
     - name: Perform CodeQL Analysis
