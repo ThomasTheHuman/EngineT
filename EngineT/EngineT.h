@@ -1,16 +1,4 @@
 #pragma once
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-    extern void init();
-    extern void configure();
-
-    extern int createEntity();
-    extern void addEntityToGroup(int entityId, int groupId);
-
-    extern void run();
-
-#ifdef __cplusplus
-}
-#endif
+#import "api/CoreAPI.h"
+#import "api/EntityAPI.h"
+#import "api/ComponentsAPI.h"

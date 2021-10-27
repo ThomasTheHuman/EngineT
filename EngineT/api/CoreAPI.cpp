@@ -1,8 +1,8 @@
-#include "EngineT.h"
-#include "core/GameController.h"
-#include "core/PrefabManager.h"
+#include "CoreAPI.h"
+#include "../core/GameController.h"
+#include "../core/PrefabManager.h"
 #include <memory>
-#include "core/Map.h"
+#include "../core/Map.h"
 
 std::unique_ptr<GameController> game;
 
@@ -11,8 +11,8 @@ void init() {
             "EngineT",
             2000,
             100,
-            1024,
-            1024,
+            500,
+            500,
             false);
 }
 
@@ -32,14 +32,6 @@ void configure() {
 
     delete map;
     PrefabManager::createPlayer(Vector2D(25*16, 25*16));
-}
-
-int createEntity() {
-    return GameController::entityManager.addEntity().getIndex();
-}
-
-void addEntityToGroup(int entityId, int groupId) {
-    GameController::entityManager.getEntity(entityId).addGroup(groupId);
 }
 
 void run() {

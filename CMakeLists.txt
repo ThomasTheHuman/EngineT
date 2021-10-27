@@ -12,6 +12,8 @@ file(GLOB LIB_SOURCES
         EngineT/core/*.cpp
         EngineT/components/*.h
         EngineT/components/*.cpp
+        EngineT/api/*.h
+        EngineT/api/*.cpp
         )
 
 find_package(SDL2 REQUIRED)

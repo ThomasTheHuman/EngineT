@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Components(Enum):
+class ComponentType(Enum):
     AI = 0
     ANIMATION = 1
     ATTACK = 2

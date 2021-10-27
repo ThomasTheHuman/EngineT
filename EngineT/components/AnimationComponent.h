@@ -19,7 +19,7 @@ class AnimationComponent final : public Component
 {
 private:
 	/// if true, the animation is playing
-	bool playing = false;
+	bool playing = true;
 	/// map of animations added
 	std::map<int, Animation> animations;
 	/// currently set animation
