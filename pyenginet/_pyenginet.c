@@ -1,6 +1,12 @@
 #include <stdbool.h>
 #include <stdio.h>
+
+#ifdef __APPLE__
 #include "Python/Python.h"
+#else
+#include <Python.h>
+#endif
+
 #include "../EngineT/EngineT.h"
 #include "ComponentType.h"
 
