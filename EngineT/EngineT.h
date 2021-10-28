@@ -1,4 +1,4 @@
 #pragma once
-#import "api/CoreAPI.h"
-#import "api/EntityAPI.h"
-#import "api/ComponentsAPI.h"
+#include "api/CoreAPI.h"
+#include "api/EntityAPI.h"
+#include "api/ComponentsAPI.h"

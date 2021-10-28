@@ -66,8 +66,8 @@ jobs:
        sudo apt-get update
        sudo apt-get -y install libsdl2-dev
        sudo apt-get -y install python3-dev
-       pip3 install setuptools scikit-build
-       python3 setup.py install
+       sudo pip3 install setuptools scikit-build
+       sudo python3 setup.py install
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
