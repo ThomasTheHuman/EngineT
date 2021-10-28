@@ -6,14 +6,14 @@ project(pyenginet)
 
 
 file(GLOB LIB_SOURCES
-        EngineT/*.h
-        EngineT/*.cpp
-        EngineT/core/*.h
-        EngineT/core/*.cpp
-        EngineT/components/*.h
-        EngineT/components/*.cpp
-        EngineT/api/*.h
-        EngineT/api/*.cpp
+        lib/*.h
+        lib/*.cpp
+        lib/core/*.h
+        lib/core/*.cpp
+        lib/components/*.h
+        lib/components/*.cpp
+        lib/api/*.h
+        lib/api/*.cpp
         )
 
 find_package(SDL2 REQUIRED)

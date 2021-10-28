@@ -7,7 +7,7 @@
 #include <Python.h>
 #endif
 
-#include "../EngineT/EngineT.h"
+#include "../lib/EngineT.h"
 #include "ComponentType.h"
 
 static PyObject *_init(PyObject *self, PyObject *args) {

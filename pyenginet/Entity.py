@@ -10,9 +10,12 @@ class Entity:
 
     def add_group(self, group):
         add_entity_to_group(self.id, group)
+        return self
 
     def add_component(self, component_type, *args):
         add_component_to_entity(self.id, component_type.value, *args)
+        return self
 
     def add_animation(self, _id, start_x, start_y, frames):
         add_animation(self.id, _id, start_x, start_y, frames)
+        return self
