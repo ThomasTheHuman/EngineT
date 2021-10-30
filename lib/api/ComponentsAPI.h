@@ -20,7 +20,7 @@ extern "C" {
 
     void addSpriteComponent(int entityId, const char* id, const char* path, int w, int h, int x, int y, float scale);
 
-    void addTransformComponent(int entityId, int x, int y);
+    void addTransformComponent(int entityId, int x, int y, int offsetX, int offsetY);
 
 #ifdef __cplusplus
 }

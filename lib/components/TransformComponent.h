@@ -5,19 +5,17 @@
 /// component that stores information about position and velocity of entity
 class TransformComponent final : public Component
 {
+private:
+    TransformComponent() = default;
+
+    Vector2D seamlessOffset;
 public:
 	/// vector of position of entity
 	Vector2D position;
 	/// vector of velocity of entity
 	Vector2D velocity;
 
-	TransformComponent();
-
-	TransformComponent(Vector2D& pos);
-	/// returns absolute (relative to map and not to screen) position, unused functionality
-	Vector2D getAbsolute() const;
-	/// sets position relative to map and not to screen, unused functionality
-	void setAbsolute(Vector2D pos);
+	TransformComponent(Vector2D& pos, Vector2D& offset);
 
 	void update() override;
 };

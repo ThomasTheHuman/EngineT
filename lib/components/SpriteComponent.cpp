@@ -1,7 +1,4 @@
 #include "SpriteComponent.h"
-#include "../core/Vector2D.h"
-#include "Components.h"
-
 
 SpriteComponent::SpriteComponent():
 texture(nullptr), srcRect(), destRect()
@@ -50,12 +47,7 @@ void SpriteComponent::render()
 	        .distanceTo(entity->getComponent<TransformComponent>().position);
 	if(distanceToPlayer < 255)
 	{
-	    const auto playerHealth = player->getComponent<HealthComponent>().getHealth();
-	    SDL_SetTextureAlphaMod( texture,
-                                128 + (127 * playerHealth) - distanceToPlayer
-                                );
-	    const auto colorMod = playerHealth < .25 ? 1 : 255;
-	    SDL_SetTextureColorMod(texture, 255, colorMod, colorMod);
+	    SDL_SetTextureAlphaMod( texture, 255 - distanceToPlayer);
 		TextureManager::render(texture, srcRect, destRect, flip, angle);
 	}
 }

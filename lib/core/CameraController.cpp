@@ -31,7 +31,7 @@ void CameraController::update()
 	const auto playerPosition = GameController::entityManager.getGroup(5)[0]->getComponent<TransformComponent>().position;
 	if(playerPosition.x < viewport.w/4)
 	{
-        cameraMovement->x = playerPosition.x < 0 ? cameraSpeed*5 : cameraSpeed;
+        cameraMovement->x = playerPosition.x < 0 ? cameraSpeed*20 : cameraSpeed;
 	} else if(playerPosition.x > 3*viewport.w/4)
 	{
 	    cameraMovement->x = playerPosition.x > viewport.w ? -cameraSpeed*5 : -cameraSpeed;
@@ -42,7 +42,7 @@ void CameraController::update()
 
 	if (playerPosition.y < viewport.h / 4)
 	{
-        cameraMovement->y = playerPosition.y < 0 ? cameraSpeed*5 : cameraSpeed;
+        cameraMovement->y = playerPosition.y < 0 ? cameraSpeed*20 : cameraSpeed;
 	}
 	else if (playerPosition.y > 3 * viewport.h / 4)
 	{
@@ -52,7 +52,7 @@ void CameraController::update()
 	{
 		cameraMovement->y = 0;
 	}
-	
+
 	viewport.x -= cameraMovement->x;
 	viewport.y -= cameraMovement->y;
 }

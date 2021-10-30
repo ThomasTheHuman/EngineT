@@ -5,8 +5,6 @@ extern "C" {
 
     extern void init();
 
-    extern void configure();
-
     extern void run();
 
 #ifdef __cplusplus

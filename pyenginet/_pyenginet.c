@@ -15,11 +15,6 @@ static PyObject *_init(PyObject *self, PyObject *args) {
     Py_RETURN_NONE;
 }
 
-static PyObject *_configure(PyObject *self, PyObject *args) {
-    configure();
-    Py_RETURN_NONE;
-}
-
 static PyObject *_createEntity(PyObject *self, PyObject *args) {
     return Py_BuildValue("i", createEntity());
 }
@@ -96,10 +91,10 @@ static PyObject *_addComponentToEntity(PyObject *self, PyObject *args) {
         }
         case TRANSFORM:
         {
-            int x, y;
-            if (!PyArg_ParseTuple(args, "iiii", &entityId, &componentType, &x, &y))
+            int x, y, offsetX, offsetY;
+            if (!PyArg_ParseTuple(args, "iiiiii", &entityId, &componentType, &x, &y, &offsetX, &offsetY))
                 return NULL;
-            addTransformComponent(entityId, x, y);
+            addTransformComponent(entityId, x, y, offsetX, offsetY);
             break;
         }
     }
@@ -122,7 +117,6 @@ static PyObject *_run(PyObject *self, PyObject *args) {
 
 static PyMethodDef engineTMethods[] = {
         {"init", _init, METH_VARARGS, "Initializes engine"},
-        {"configure", _configure, METH_VARARGS, "Applies game parameters"},
         {"create_entity", _createEntity, METH_VARARGS, "Creates game entity and returns it's id"},
         {"add_entity_to_group", _addEntityToGroup, METH_VARARGS, "Adds entity to group"},
         {"add_component_to_entity", _addComponentToEntity, METH_VARARGS, "Adds component to entity"},
