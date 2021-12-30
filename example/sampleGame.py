@@ -17,14 +17,8 @@ MapLoader\
 EntityFactory\
     .spawn_player(48, 25*16)\
     .spawn_skeleton(48, 25*16)\
-    .spawn_skeleton(48*2, 25*16)\
-    .spawn_skeleton(48*3, 25*16)\
-    .spawn_skeleton(48*4, 25*16)\
     .spawn_skeleton(48*5, 25*16)\
     .spawn_skeleton(48*-1, 25*16)\
-    .spawn_skeleton(48*-2, 25*16)\
-    .spawn_skeleton(48*16, 25*16)\
-    .spawn_skeleton(48*16, 25*16)\
     .spawn_skeleton(48*16, 25*16)
 
 EngineT.run()
