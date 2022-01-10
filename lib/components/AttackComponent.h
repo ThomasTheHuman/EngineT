@@ -4,25 +4,20 @@
 #include "Component.h"
 #include "../core/Vector2D.h"
 
-/// component that adds attacking functionality, it's methods are triggered by AIComponent or PlayerComponent
 class AttackComponent final : public Component
 {
 private:
-	/// amount of frames the attack takes
 	int frames;
-	/// base attack damage amount
 	int damage;
-	/// amount of frame delay between attack being triggered and damage being given
 	int damageFrame;
-	/// current frame of attack (if triggered)
 	int currentFrame = 0;
 
-	/// attack bar rect
+	// attack bar rect
 	SDL_Rect attackbar;
 
 	void recalculateAttackbar();
 
-	/// adds damage to nearby entities of passed group @param group group of entities attacked
+	// adds damage to nearby entities of passed group
 	template<class controller>void attack(int group);
 public:
 	AttackComponent(int frames, int damageFrame, int damage);

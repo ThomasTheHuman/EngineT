@@ -1,7 +1,6 @@
 #include "CoreAPI.h"
 #include "../core/GameController.h"
 #include <memory>
-#include "../core/Map.h"
 
 std::unique_ptr<GameController> game;
 
