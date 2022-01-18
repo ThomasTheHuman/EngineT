@@ -14,11 +14,10 @@ void init() {
             false);
 }
 
+const int FPS = 120;
+const int frameDelay = 1000 / FPS;
+
 void run() {
-    const int FPS = 120;
-
-    const int frameDelay = 1000 / FPS;
-
     int renderFrame = true;
     while (game->running()) {
         const Uint32 frameStart = SDL_GetTicks();

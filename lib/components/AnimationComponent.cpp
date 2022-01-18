@@ -40,8 +40,12 @@ void AnimationComponent::update()
 		if (frameDelay >= 10) { frameDelay = 0; }
 		if (frameDelay == 0)
 		{
+            const Vector2D src = Vector2D(
+                    animation->startPos.x + frame,
+                    animation->startPos.y
+                    );
 			entity->getComponent<SpriteComponent>()
-				.setSrc(Vector2D(animation->startPos.x + frame, animation->startPos.y), flip);
+				.setSrc(src, flip);
 			frame++;
 		}
 		frameDelay++;
