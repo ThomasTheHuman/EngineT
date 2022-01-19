@@ -16,7 +16,9 @@ GameController::GameController(const char* title, int xpos, int ypos, int w, int
 {
 	CameraController::setResolution(w, h);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
+#if __APPLE__
 	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "metal");
+#endif
 	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
 	int flags = 0;
 	if (fullScreen) { flags = SDL_WINDOW_FULLSCREEN; }
