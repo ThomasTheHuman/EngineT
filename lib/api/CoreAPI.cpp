@@ -9,9 +9,9 @@ void init() {
             "EngineT",
             0,
             0,
-            2560/3,
-            1600/3,
-            false);
+            2560/2,
+            1600/2,
+            true);
 }
 
 const int FPS = 120;
