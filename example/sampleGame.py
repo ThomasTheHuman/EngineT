@@ -16,11 +16,9 @@ MapLoader\
     .set_chains(chains)\
     .load("map.json", "sprites/Assets.bmp", 16, 23)
 
-EntityFactory\
-    .spawn_player(48, 25*16)\
-    .spawn_skeleton(48, 25*16)\
-    .spawn_skeleton(48*5, 25*16)\
-    .spawn_skeleton(48*-1, 25*16)\
-    .spawn_skeleton(48*16, 25*16)
+EntityFactory.spawn_player(100, 25*16)
+
+for i in range(10):
+    EntityFactory.spawn_skeleton(200*-1, 25*16)
 
 EngineT.run()
