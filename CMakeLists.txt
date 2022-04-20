@@ -1,10 +1,8 @@
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 cmake_minimum_required(VERSION 3.17)
-project(pyenginet)
+project(EngineJ)
 
-
-# libEngineT.a
 file(GLOB LIB_SOURCES
         lib/*.h
         lib/*.cpp
@@ -12,20 +10,10 @@ file(GLOB LIB_SOURCES
         lib/core/*.cpp
         lib/components/*.h
         lib/components/*.cpp
-        lib/api/*.h
-        lib/api/*.cpp
+        lib/systems/*.h
+        lib/systems/*.cpp
         )
 find_package(SDL2 REQUIRED)
-add_library(EngineT STATIC ${LIB_SOURCES})
+add_executable(EngineJ ${LIB_SOURCES})
 include_directories(${SDL2_INCLUDE_DIR})
-target_link_libraries(EngineT ${SDL2_LIBRARY})
-target_include_directories(EngineT PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-
-# _pyenginet.so
-file(GLOB PY_SOURCES pyenginet/*.c)
-find_package(PythonExtensions REQUIRED)
-add_library(_pyenginet MODULE ${PY_SOURCES})
-target_link_libraries(_pyenginet EngineT)
-python_extension_module(_pyenginet)
-install(TARGETS _pyenginet LIBRARY DESTINATION pyenginet)
+target_link_libraries(EngineJ ${SDL2_LIBRARY})

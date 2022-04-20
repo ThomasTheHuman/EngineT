@@ -1,7 +1,11 @@
 #include "Vector2D.h"
-#include <math.h>
+#include <cmath>
 
 Vector2D::Vector2D() :x(0),y(0)
+{
+}
+
+Vector2D::Vector2D(float xy) :x(xy),y(xy)
 {
 }
 

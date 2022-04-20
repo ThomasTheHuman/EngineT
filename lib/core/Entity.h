@@ -5,10 +5,8 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
-#include "CameraController.h"
 #include "../components/Component.h"
 
-class EntityManager;
 
 inline std::size_t getNewComponentTypeID()
 {
@@ -25,43 +23,39 @@ std::size_t getComponentTypeID() noexcept
 
 class Entity
 {
-    int i;
-	EntityManager& manager;
-	std::vector<std::unique_ptr<Component>> components;
 	std::array<Component*, 16> componentArray{};
 	std::bitset<16> componentBitset;
+    std::array<std::vector<Entity*>, 16> groupedEntities;
 
 public:
-	explicit Entity(EntityManager& manager, int i);
-	void update();
-	void render();
-	void addGroup(std::size_t group);
-	template <typename T> bool hasComponent() const
+    const Entity *parent;
+    const bool root;
+
+    Entity();
+    Entity(Entity& parent);
+	template <typename T> [[nodiscard]] bool hasComponent() const
 	{
 		return componentBitset[getComponentTypeID<T>()];
 	}
 
 	template <typename T, typename... TArgs>
-	T& addComponent(TArgs&&... args)
+	T* addComponent(TArgs&&... args)
 	{
 		T* component(new T(std::forward<TArgs>(args)...));
 		component->entity = this;
-		std::unique_ptr<Component>uPtr{ component };
-		components.emplace_back(std::move(uPtr));
+        auto id = getComponentTypeID<T>();
+		componentArray[id] = component;
+		componentBitset[id] = true;
 
-		componentArray[getComponentTypeID<T>()] = component;
-		componentBitset[getComponentTypeID<T>()] = true;
-
-		return *component;
+		return component;
 	}
 
-	template<typename T> T& getComponent() const
+	template<typename T> T* getComponent() const
 	{
-		auto ptr(componentArray[getComponentTypeID<T>()]);
-		return *static_cast<T*>(ptr);
+		return (T*)componentArray[getComponentTypeID<T>()];
 	}
 
-	int getIndex() const {
-	    return i;
-	}
+    std::vector<Entity*>* getGroup(std::size_t group);
+
+    Entity* addEntity(std::size_t group);
 };

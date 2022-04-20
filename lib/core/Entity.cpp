@@ -1,20 +1,17 @@
-#include "EntityManager.h"
+#include "Entity.h"
 
-Entity::Entity(EntityManager& manager, int i): manager(manager), i(i)
+Entity::Entity(): parent(this), root(true) {}
+
+Entity::Entity(Entity& parent): parent(&parent), root(false) {}
+
+std::vector<Entity*>* Entity::getGroup(std::size_t group)
 {
+    return &groupedEntities[group];
 }
 
-void Entity::update()
+Entity* Entity::addEntity(std::size_t group)
 {
-	for (auto& component : components) component->update();
-}
-
-void Entity::render()
-{
-	for (auto& component : components) component->render();
-}
-
-void Entity::addGroup(std::size_t group)
-{
-	manager.addToGroup(this, group);
+    auto* entity = new Entity(*this);
+    groupedEntities[group].emplace_back(entity);
+    return entity;
 }

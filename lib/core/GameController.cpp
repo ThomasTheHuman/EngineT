@@ -1,71 +1,40 @@
 ﻿#include "GameController.h"
-#include <memory>
+#include "../components/Transform.h"
+#include "../systems/RenderSystem.h"
+#include "../systems/PhysicsSystem.h"
+#include "../systems/PlayerSystem.h"
+#include <algorithm>
 
-SDL_Event GameController::event;
+[[noreturn]] GameController::GameController() {
+    auto root = new Entity();
+    root->addComponent<Transform>();
 
-SDL_Renderer* GameController::renderer(nullptr);
+    for (int i = 0; i < 100; i++) {
+        for (int j = 99; j >= 0; j--) {
+            auto test = root->addEntity(0);
+            auto transform = test->addComponent<Transform>();
+            transform->position += Vector3D(i * 32, j * 32, 0);
+            auto renderable = test->addComponent<Renderable>();
+            renderable->render = true;
+            renderable->srcRect = {(rand() % 2) * 64, 64, 64, 64};
+            renderable->spriteSheet = "isometric.bmp";
+        }
+    }
 
-ResourceManager* GameController::resourceManager(new ResourceManager);
-
-CameraController GameController::cameraController(2);
-
-EntityManager GameController::entityManager;
-
-GameController::GameController(const char* title, int xpos, int ypos, int w, int h, bool fullScreen)
-	: window(nullptr, SDL_DestroyWindow)
-{
-	CameraController::setResolution(w, h);
-	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
-#if __APPLE__
-	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "metal");
-#endif
-	SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
-	int flags = 0;
-	if (fullScreen) { flags = SDL_WINDOW_FULLSCREEN; }
-	SDL_Init(SDL_INIT_EVERYTHING);
-	window.reset(SDL_CreateWindow(title, xpos, ypos, w, h, flags));
-	renderer = SDL_CreateRenderer(window.get(), -1, 0);
-	SDL_SetRenderDrawColor(renderer, 52, 32, 43, 255);
-	SDL_RenderSetScale(renderer, 2, 2);
-	//SDL_RenderSetLogicalSize(renderer, w/2, h/2);
-	isRunning = true;
+    systems = std::vector<System*>();
+    systems.push_back(new PlayerSystem(root));
+    systems.push_back(new PhysicsSystem(root));
+    systems.push_back(new RenderSystem(root));
+    for (;;) {
+        std::for_each(systems.begin(), systems.end(), [](auto system) -> void {
+            system->update();
+        });
+    }
 }
 
 GameController::~GameController()
 {
 	SDL_Quit();
-}
-
-void GameController::handleEvents()
-{
-	SDL_PollEvent(&event);
-	switch (event.type)
-	{
-	case SDL_QUIT:
-		isRunning = false;
-		break;
-	default:
-		break;
-	}
-}
-
-void GameController::update()
-{
-	CameraController::update();
-	entityManager.update();
-}
-
-void GameController::render()
-{
-    SDL_SetRenderDrawColor(renderer, 52, 32, 43, 255);
-	SDL_RenderClear(renderer);
-	entityManager.render();
-	SDL_RenderPresent(renderer);
-}
-
-bool GameController::running() const
-{
-	return isRunning;
 }
 
 
