@@ -1,4 +1,4 @@
-]#ifndef ENGINEJ_SYSTEM_H
+#ifndef ENGINEJ_SYSTEM_H
 #define ENGINEJ_SYSTEM_H
 
 #include "../core/Entity.h"
