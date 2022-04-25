@@ -6,7 +6,6 @@
 #include <atomic>
 
 struct Renderable : Component {
-    std::atomic<bool> render = false;
     SDL_Texture* texture = nullptr;
     std::string spriteSheet;
     SDL_Rect srcRect {0,0,0,0};

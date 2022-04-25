@@ -6,6 +6,7 @@
 #include <bitset>
 #include <array>
 #include "../components/Component.h"
+#include "../CONF.h"
 
 
 inline std::size_t getNewComponentTypeID()
@@ -23,9 +24,9 @@ std::size_t getComponentTypeID() noexcept
 
 class Entity
 {
-	std::array<Component*, 16> componentArray{};
-	std::bitset<16> componentBitset;
-    std::array<std::vector<Entity*>, 16> groupedEntities;
+	std::array<Component*, MAX_COMPONENTS> componentArray{};
+	std::bitset<MAX_COMPONENTS> componentBitset;
+    std::array<std::vector<Entity*>, MAX_ENTITY_LAYERS> groupedEntities;
 
 public:
     const Entity *parent;
@@ -52,7 +53,11 @@ public:
 
 	template<typename T> T* getComponent() const
 	{
-		return (T*)componentArray[getComponentTypeID<T>()];
+        if (hasComponent<T>()) {
+            return (T*)componentArray[getComponentTypeID<T>()];
+        } else {
+            throw std::runtime_error("Tried to get a missing component!");
+        }
 	}
 
     std::vector<Entity*>* getGroup(std::size_t group);

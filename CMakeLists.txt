@@ -12,6 +12,8 @@ file(GLOB LIB_SOURCES
         lib/components/*.cpp
         lib/systems/*.h
         lib/systems/*.cpp
+        lib/types/*.h
+        lib/types/*.cpp
         )
 find_package(SDL2 REQUIRED)
 add_executable(EngineJ ${LIB_SOURCES})

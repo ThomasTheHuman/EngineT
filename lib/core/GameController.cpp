@@ -8,18 +8,30 @@
 [[noreturn]] GameController::GameController() {
     auto root = new Entity();
     root->addComponent<Transform>();
+    auto terrain = root->addComponent<Terrain>();
+    terrain->sprites[1].spriteSheet = "isometric.bmp";
+    terrain->sprites[1].srcRect = {0, 64, 64, 64};
+    terrain->sprites[2].spriteSheet = "isometric.bmp";
+    terrain->sprites[2].srcRect = {64, 64, 64, 64};
 
-    for (int i = 0; i < 100; i++) {
-        for (int j = 99; j >= 0; j--) {
-            auto test = root->addEntity(0);
-            auto transform = test->addComponent<Transform>();
-            transform->position += Vector3D(i * 32, j * 32, 0);
-            auto renderable = test->addComponent<Renderable>();
-            renderable->render = true;
-            renderable->srcRect = {(rand() % 2) * 64, 64, 64, 64};
-            renderable->spriteSheet = "isometric.bmp";
+    for (auto & chunkRow : terrain->chunks) {
+        for (auto & chunk : chunkRow) {
+            for (auto & tileRow : chunk.tiles) {
+                for (auto & tile : tileRow) {
+                    tile.sprites[0] = (rand()%2) + 1;
+                    tile.sprites[1] = 0;
+                    tile.sprites[2] = 0;
+                }
+            }
         }
     }
+
+    auto entity = root->addEntity(0);
+    entity->addComponent<Transform>();
+    auto renderable = entity->addComponent<Renderable>();
+    renderable->srcRect = {0, 64, 64, 64};
+    renderable->spriteSheet = "isometric.bmp";
+
 
     systems = std::vector<System*>();
     systems.push_back(new PlayerSystem(root));
