@@ -92,5 +92,5 @@ Vector2D Vector3D::to2D() const {
     #define INCLINATION 2.f
     float x05 = 0.5f * x;
     float y05 = 0.5f * y;
-    return {INCLINATION * x05 + INCLINATION * y05, x05 - y05 - z};
+    return {(int)floor(INCLINATION * x05 + INCLINATION * y05), (int)floor(x05 - y05 - z)};
 }

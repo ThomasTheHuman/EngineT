@@ -14,7 +14,7 @@ void PhysicsSystem::updateEntity(Entity &entity, long long deltaTime) {
         transform->angularVelocity.store(transform->angularVelocity + (transform->angularAcceleration * mult));
         transform->rotation.store(transform->rotation + (transform->angularVelocity * mult));
         if (transform->rotation >= 360.f) transform->rotation.store(transform->rotation - 360.f);
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < MAX_ENTITY_LAYERS; i++) {
             auto group = entity.getGroup(i);
             std::for_each(group->begin(), group->end(), [deltaTime](auto child) -> void {
                 updateEntity(*child, deltaTime);
